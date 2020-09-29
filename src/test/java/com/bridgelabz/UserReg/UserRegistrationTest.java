@@ -108,6 +108,20 @@ public class UserRegistrationTest
     	boolean passwordValid = userReg.checkPassword(password);
     	Assert.assertEquals(false, passwordValid);
     }
+    @Test
+    public void givenPassword_WhenAtleastOneNumeric_ReturnTrue()
+    {
+    	String password = "asdfRr3467h";
+    	boolean passwordValid = userReg.checkPassword(password);
+    	Assert.assertEquals(true, passwordValid);
+    }
+    @Test
+    public void givenPassword_WhenNoNumeric_ReturnFalse()
+    {
+    	String password = "aSdfZXfd%h";
+    	boolean passwordValid = userReg.checkPassword(password);
+    	Assert.assertEquals(false, passwordValid);
+    }
 
 	
    

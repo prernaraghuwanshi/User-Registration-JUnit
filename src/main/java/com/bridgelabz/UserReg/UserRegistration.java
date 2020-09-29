@@ -23,7 +23,7 @@ public class UserRegistration {
 		return MOBILE_PATTERN.matcher(s).matches();
 	}
 	public boolean checkPassword(String s) {
-		Pattern PASSWORD_PATTERN = Pattern.compile("^(?=.*?[A-Z]).{8,}$");
+		Pattern PASSWORD_PATTERN = Pattern.compile("^(?=.*?[A-Z])(?=.*?[0-9]).{8,}$");
 		return PASSWORD_PATTERN.matcher(s).matches();
 	}
 
