@@ -59,6 +59,27 @@ public class UserRegistrationTest
     	boolean fnameValid = userReg.checkFirstName(name);
     	Assert.assertEquals(false,fnameValid);
     }
+    @Test
+    public void givenMobile_WhenPatternMatches_ReturnTrue()
+    {
+    	String mobile = "91 9475976187";
+    	boolean mobileValid = userReg.checkMobile(mobile);
+    	Assert.assertEquals(true,mobileValid);
+    }
+    @Test
+    public void givenMobile_WhenNoCountryCode_ReturnFalse()
+    {
+    	String mobile = "9475976187";
+    	boolean mobileValid = userReg.checkMobile(mobile);
+    	Assert.assertEquals(false,mobileValid);
+    }
+    @Test
+    public void givenMobile_WhenNotATenDigitNumber_ReturnFalse()
+    {
+    	String mobile = "94759761";
+    	boolean mobileValid = userReg.checkMobile(mobile);
+    	Assert.assertEquals(false,mobileValid);
+    }
     
 
 	

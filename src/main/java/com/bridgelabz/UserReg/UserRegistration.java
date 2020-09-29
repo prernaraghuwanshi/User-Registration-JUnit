@@ -18,5 +18,10 @@ public class UserRegistration {
 		Pattern LNAME_PATTERN = Pattern.compile("^[A-Z]{1}[a-z]{2,}$");
         return LNAME_PATTERN.matcher(s).matches();
     }
+	public boolean checkMobile(String s) {
+		Pattern MOBILE_PATTERN = Pattern.compile("^[0-9]{2} [0-9]{10}$");
+		return MOBILE_PATTERN.matcher(s).matches();
+	}
+	
 
 }
