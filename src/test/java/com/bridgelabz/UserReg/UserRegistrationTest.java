@@ -83,7 +83,7 @@ public class UserRegistrationTest
     @Test
     public void givenPassword_WhenMinimumEightCharacters_ReturnTrue()
     {
-    	String password = "asdfer3467h";
+    	String password = "asdfeR3467h";
     	boolean passwordValid = userReg.checkPassword(password);
     	Assert.assertEquals(true, passwordValid);
     }
@@ -91,6 +91,20 @@ public class UserRegistrationTest
     public void givenPassword_WhenNotMinimumEightCharacters_ReturnFalse()
     {
     	String password = "asdf";
+    	boolean passwordValid = userReg.checkPassword(password);
+    	Assert.assertEquals(false, passwordValid);
+    }
+    @Test
+    public void givenPassword_WhenAtleastOneUpperCase_ReturnTrue()
+    {
+    	String password = "asdfRr3467h";
+    	boolean passwordValid = userReg.checkPassword(password);
+    	Assert.assertEquals(true, passwordValid);
+    }
+    @Test
+    public void givenPassword_WhenNoUpperCase_ReturnFalse()
+    {
+    	String password = "asdfer3467h";
     	boolean passwordValid = userReg.checkPassword(password);
     	Assert.assertEquals(false, passwordValid);
     }
