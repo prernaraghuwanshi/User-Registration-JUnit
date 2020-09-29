@@ -38,6 +38,27 @@ public class UserRegistrationTest
     	boolean fnameValid = userReg.checkFirstName(name);
     	Assert.assertEquals(false,fnameValid);
     }
+    @Test
+    public void givenLastName_WhenPatternMatches_ReturnTrue()
+    {
+    	String name = "Raghuwanshi";
+    	boolean fnameValid = userReg.checkFirstName(name);
+    	Assert.assertEquals(true,fnameValid);
+    }
+    @Test
+    public void givenLastName_WhenLessThanThreeCharacters_ReturnFalse()
+    {
+    	String name = "R";
+    	boolean fnameValid = userReg.checkFirstName(name);
+    	Assert.assertEquals(false,fnameValid);
+    }
+    @Test
+    public void givenLastName_WhenDoesNotStartWithCapital_ReturnFalse()
+    {
+    	String name = "raghuwanshi";
+    	boolean fnameValid = userReg.checkFirstName(name);
+    	Assert.assertEquals(false,fnameValid);
+    }
     
 
 	

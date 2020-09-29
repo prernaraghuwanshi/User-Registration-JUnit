@@ -13,5 +13,10 @@ public class UserRegistration {
 		Pattern FNAME_PATTERN = Pattern.compile("^[A-Z]{1}[a-z]{2,}$");
         return FNAME_PATTERN.matcher(s).matches();
     }
+	
+	public boolean checkLastName(String s) {
+		Pattern LNAME_PATTERN = Pattern.compile("^[A-Z]{1}[a-z]{2,}$");
+        return LNAME_PATTERN.matcher(s).matches();
+    }
 
 }
