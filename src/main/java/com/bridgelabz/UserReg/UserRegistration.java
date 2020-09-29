@@ -22,6 +22,9 @@ public class UserRegistration {
 		Pattern MOBILE_PATTERN = Pattern.compile("^[0-9]{2} [0-9]{10}$");
 		return MOBILE_PATTERN.matcher(s).matches();
 	}
-	
+	public boolean checkPassword(String s) {
+		Pattern PASSWORD_PATTERN = Pattern.compile("^.{8,}$");
+		return PASSWORD_PATTERN.matcher(s).matches();
+	}
 
 }

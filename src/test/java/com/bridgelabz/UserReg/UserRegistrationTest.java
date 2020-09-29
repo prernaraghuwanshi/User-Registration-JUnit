@@ -80,7 +80,20 @@ public class UserRegistrationTest
     	boolean mobileValid = userReg.checkMobile(mobile);
     	Assert.assertEquals(false,mobileValid);
     }
-    
+    @Test
+    public void givenPassword_WhenMinimumEightCharacters_ReturnTrue()
+    {
+    	String password = "asdfer3467h";
+    	boolean passwordValid = userReg.checkPassword(password);
+    	Assert.assertEquals(true, passwordValid);
+    }
+    @Test
+    public void givenPassword_WhenNotMinimumEightCharacters_ReturnFalse()
+    {
+    	String password = "asdf";
+    	boolean passwordValid = userReg.checkPassword(password);
+    	Assert.assertEquals(false, passwordValid);
+    }
 
 	
    
