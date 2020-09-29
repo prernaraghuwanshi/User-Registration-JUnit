@@ -1,0 +1,1 @@
+User Registration to validate first name, last name, mobile number and password. JUnit test cases provided.
