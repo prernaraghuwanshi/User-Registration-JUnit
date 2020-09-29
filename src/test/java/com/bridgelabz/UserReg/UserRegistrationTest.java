@@ -83,35 +83,35 @@ public class UserRegistrationTest
     @Test
     public void givenPassword_WhenMinimumEightCharacters_ReturnTrue()
     {
-    	String password = "asdfeR3467h";
+    	String password = "asdfeR346@7h";
     	boolean passwordValid = userReg.checkPassword(password);
     	Assert.assertEquals(true, passwordValid);
     }
     @Test
     public void givenPassword_WhenNotMinimumEightCharacters_ReturnFalse()
     {
-    	String password = "asdf";
+    	String password = "dfA3$";
     	boolean passwordValid = userReg.checkPassword(password);
     	Assert.assertEquals(false, passwordValid);
     }
     @Test
     public void givenPassword_WhenAtleastOneUpperCase_ReturnTrue()
     {
-    	String password = "asdfRr3467h";
+    	String password = "asdfRr3467h*";
     	boolean passwordValid = userReg.checkPassword(password);
     	Assert.assertEquals(true, passwordValid);
     }
     @Test
     public void givenPassword_WhenNoUpperCase_ReturnFalse()
     {
-    	String password = "asdfer3467h";
+    	String password = "asdfer3467h*";
     	boolean passwordValid = userReg.checkPassword(password);
     	Assert.assertEquals(false, passwordValid);
     }
     @Test
     public void givenPassword_WhenAtleastOneNumeric_ReturnTrue()
     {
-    	String password = "asdfRr3467h";
+    	String password = "asdfRr3467h%";
     	boolean passwordValid = userReg.checkPassword(password);
     	Assert.assertEquals(true, passwordValid);
     }
@@ -119,6 +119,27 @@ public class UserRegistrationTest
     public void givenPassword_WhenNoNumeric_ReturnFalse()
     {
     	String password = "aSdfZXfd%h";
+    	boolean passwordValid = userReg.checkPassword(password);
+    	Assert.assertEquals(false, passwordValid);
+    }
+    @Test
+    public void givenPassword_WhenExactlyOneSpecialCharacter_ReturnTrue()
+    {
+    	String password = "asdfRr34*7h";
+    	boolean passwordValid = userReg.checkPassword(password);
+    	Assert.assertEquals(true, passwordValid);
+    }
+    @Test
+    public void givenPassword_WhenNoSpecialCharacter_ReturnFalse()
+    {
+    	String password = "aSdfZXfd3h";
+    	boolean passwordValid = userReg.checkPassword(password);
+    	Assert.assertEquals(false, passwordValid);
+    }
+    @Test
+    public void givenPassword_WhenMoreThanOneSpecialCharacter_ReturnFalse()
+    {
+    	String password = "aSdfZXfd%9$h";
     	boolean passwordValid = userReg.checkPassword(password);
     	Assert.assertEquals(false, passwordValid);
     }

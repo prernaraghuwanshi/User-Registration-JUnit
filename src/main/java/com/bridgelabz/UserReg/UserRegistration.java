@@ -23,8 +23,9 @@ public class UserRegistration {
 		return MOBILE_PATTERN.matcher(s).matches();
 	}
 	public boolean checkPassword(String s) {
+		Pattern PASSWORD_PATTERN1 = Pattern.compile("[A-Za-z0-9]*[^A-Za-z0-9 ]{1}[A-Za-z0-9]*");
 		Pattern PASSWORD_PATTERN = Pattern.compile("^(?=.*?[A-Z])(?=.*?[0-9]).{8,}$");
-		return PASSWORD_PATTERN.matcher(s).matches();
+		return PASSWORD_PATTERN1.matcher(s).matches()&&PASSWORD_PATTERN.matcher(s).matches();
 	}
 
 }
