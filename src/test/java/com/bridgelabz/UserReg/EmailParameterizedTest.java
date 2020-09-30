@@ -1,5 +1,7 @@
 package com.bridgelabz.UserReg;
 
+import static org.junit.Assert.assertEquals;
+
 import java.util.Arrays;
 import java.util.Collection;
 
@@ -34,9 +36,17 @@ public class EmailParameterizedTest {
 	}
 	
 	@Test
-	public void testEmailValidation()
+	public void testEmailValidation() throws UserRegistrationException
 	{
-		Assert.assertEquals(emailValid, userReg.checkEmail(email));
+		try {
+		boolean result= userReg.checkEmail(email);
+		Assert.assertEquals(true,result);
+		}
+		catch(UserRegistrationException e)
+		{
+			System.out.println(e.getMessage());
+    		assertEquals(UserRegistrationException.ExceptionType.INVALID_EMAIL, e.exceptionType);
+		}
 	}
 	
 	
