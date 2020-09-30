@@ -27,5 +27,10 @@ public class UserRegistration {
 		Pattern PASSWORD_PATTERN = Pattern.compile("^(?=.*?[A-Z])(?=.*?[0-9]).{8,}$");
 		return PASSWORD_PATTERN1.matcher(s).matches()&&PASSWORD_PATTERN.matcher(s).matches();
 	}
+	public boolean checkEmail(String s) {
+		Pattern EMAIL_PATTERN = Pattern.compile("^[a-z0-9]+[_+-\\.]{0,1}[a-z0-9]+@[a-z0-9]+\\.[a-z]{2,}(\\.[a-z]{2,}){0,1}$");
+        return EMAIL_PATTERN.matcher(s).matches();
+	}
+    
 
 }
