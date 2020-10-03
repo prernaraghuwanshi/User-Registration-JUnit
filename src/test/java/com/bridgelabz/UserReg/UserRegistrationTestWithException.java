@@ -44,7 +44,7 @@ public class UserRegistrationTestWithException
     	catch(UserRegistrationException e)
     	{
     		System.out.println(e.getMessage());
-    		assertEquals(UserRegistrationException.ExceptionType.INVALID_FIRSTNAME, e.exceptionType);
+    		assertEquals(UserRegistrationException.ExceptionType.ENTERED_INVALID, e.exceptionType);
     	}
     }
     @Test
@@ -101,7 +101,7 @@ public class UserRegistrationTestWithException
     	catch(UserRegistrationException e)
     	{
     		System.out.println(e.getMessage());
-    		assertEquals(UserRegistrationException.ExceptionType.INVALID_LASTNAME, e.exceptionType);
+    		assertEquals(UserRegistrationException.ExceptionType.ENTERED_INVALID, e.exceptionType);
     	}
     }
     @Test
@@ -158,7 +158,7 @@ public class UserRegistrationTestWithException
     	catch(UserRegistrationException e)
     	{
     		System.out.println(e.getMessage());
-    		assertEquals(UserRegistrationException.ExceptionType.INVALID_MOBILE, e.exceptionType);
+    		assertEquals(UserRegistrationException.ExceptionType.ENTERED_INVALID, e.exceptionType);
     	}
     }
     @Test
@@ -215,7 +215,7 @@ public class UserRegistrationTestWithException
     	catch(UserRegistrationException e)
     	{
     		System.out.println(e.getMessage());
-    		assertEquals(UserRegistrationException.ExceptionType.INVALID_EMAIL, e.exceptionType);
+    		assertEquals(UserRegistrationException.ExceptionType.ENTERED_INVALID, e.exceptionType);
     	}
     }
     @Test
@@ -257,7 +257,7 @@ public class UserRegistrationTestWithException
     	}
     	catch(UserRegistrationException e)
     	{
-    		e.printStackTrace();
+    		//e.printStackTrace();
     	}
     	
     }
@@ -272,7 +272,7 @@ public class UserRegistrationTestWithException
     	catch(UserRegistrationException e)
     	{
     		System.out.println(e.getMessage());
-    		assertEquals(UserRegistrationException.ExceptionType.INVALID_PASSWORD, e.exceptionType);
+    		assertEquals(UserRegistrationException.ExceptionType.ENTERED_INVALID, e.exceptionType);
     	}
     }
     @Test

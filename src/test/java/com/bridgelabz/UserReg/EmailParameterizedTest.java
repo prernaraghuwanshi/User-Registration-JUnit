@@ -39,13 +39,13 @@ public class EmailParameterizedTest {
 	public void testEmailValidation() throws UserRegistrationException
 	{
 		try {
-		boolean result= userReg.checkEmail(email);
-		Assert.assertEquals(true,result);
+			boolean result= userReg.checkEmail(email);
+			Assert.assertEquals(true,result);
 		}
 		catch(UserRegistrationException e)
 		{
 			System.out.println(e.getMessage());
-    		assertEquals(UserRegistrationException.ExceptionType.INVALID_EMAIL, e.exceptionType);
+    		assertEquals(UserRegistrationException.ExceptionType.ENTERED_INVALID, e.exceptionType);
 		}
 	}
 	

@@ -23,14 +23,15 @@ public class UserRegistrationTest
     public void givenName_WhenPatternMatches_ReturnTrue()
     {
     	String name = "Prerna";
-    	boolean fnameValid = false;
+    	boolean fnameValid;
 		try {
 			fnameValid = userReg.checkFirstName(name);
+			Assert.assertEquals(true,fnameValid);
 		} catch (UserRegistrationException e) {
 		
-			e.printStackTrace();
+			//e.printStackTrace();
 		}
-    	Assert.assertEquals(true,fnameValid);
+    	
     }
     @Test
     public void givenName_WhenLessThanThreeCharacters_ReturnFalse()
@@ -42,7 +43,7 @@ public class UserRegistrationTest
 		} catch (UserRegistrationException e) {
 			
 			System.out.println(e.getMessage());
-    		assertEquals(UserRegistrationException.ExceptionType.INVALID_FIRSTNAME, e.exceptionType);
+    		assertEquals(UserRegistrationException.ExceptionType.ENTERED_INVALID, e.exceptionType);
 		}
     	
     }
@@ -55,7 +56,7 @@ public class UserRegistrationTest
 			fnameValid = userReg.checkFirstName(name);
 		} catch (UserRegistrationException e) {
 			System.out.println(e.getMessage());
-    		assertEquals(UserRegistrationException.ExceptionType.INVALID_FIRSTNAME, e.exceptionType);
+    		assertEquals(UserRegistrationException.ExceptionType.ENTERED_INVALID, e.exceptionType);
 		}
     	
     }
@@ -69,7 +70,7 @@ public class UserRegistrationTest
 			Assert.assertEquals(true,fnameValid);
 		} catch (UserRegistrationException e) {
 			
-			e.printStackTrace();
+			//e.printStackTrace();
 		}
     	
     }
@@ -82,7 +83,7 @@ public class UserRegistrationTest
 			fnameValid = userReg.checkLastName(name);
 		} catch (UserRegistrationException e) {
 			System.out.println(e.getMessage());
-    		assertEquals(UserRegistrationException.ExceptionType.INVALID_LASTNAME, e.exceptionType);
+    		assertEquals(UserRegistrationException.ExceptionType.ENTERED_INVALID, e.exceptionType);
     		}
     	
     }
@@ -95,7 +96,7 @@ public class UserRegistrationTest
 			fnameValid = userReg.checkLastName(name);
 		} catch (UserRegistrationException e) {
 			System.out.println(e.getMessage());
-    		assertEquals(UserRegistrationException.ExceptionType.INVALID_LASTNAME, e.exceptionType);
+    		assertEquals(UserRegistrationException.ExceptionType.ENTERED_INVALID, e.exceptionType);
 		}
     	
     }
@@ -109,7 +110,7 @@ public class UserRegistrationTest
 			Assert.assertEquals(true,mobileValid);
 		} catch (UserRegistrationException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			//e.printStackTrace();
 		}
     	
     }
@@ -122,7 +123,7 @@ public class UserRegistrationTest
 			mobileValid = userReg.checkMobile(mobile);
 		} catch (UserRegistrationException e) {
 			System.out.println(e.getMessage());
-    		assertEquals(UserRegistrationException.ExceptionType.INVALID_MOBILE, e.exceptionType);
+    		assertEquals(UserRegistrationException.ExceptionType.ENTERED_INVALID, e.exceptionType);
 		}
     	
     }
@@ -135,7 +136,7 @@ public class UserRegistrationTest
 			mobileValid = userReg.checkMobile(mobile);
 		} catch (UserRegistrationException e) {
 			System.out.println(e.getMessage());
-    		assertEquals(UserRegistrationException.ExceptionType.INVALID_MOBILE, e.exceptionType);
+    		assertEquals(UserRegistrationException.ExceptionType.ENTERED_INVALID, e.exceptionType);
 		}
     	
     }
@@ -149,7 +150,7 @@ public class UserRegistrationTest
 			Assert.assertEquals(true, passwordValid);
 		} catch (UserRegistrationException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			//e.printStackTrace();
 		}
     	
     }
@@ -162,7 +163,7 @@ public class UserRegistrationTest
 			passwordValid = userReg.checkPassword(password);
 		} catch (UserRegistrationException e) {
 			System.out.println(e.getMessage());
-    		assertEquals(UserRegistrationException.ExceptionType.INVALID_PASSWORD, e.exceptionType);
+    		assertEquals(UserRegistrationException.ExceptionType.ENTERED_INVALID, e.exceptionType);
 		}
     	
     }
@@ -176,7 +177,7 @@ public class UserRegistrationTest
 			Assert.assertEquals(true, passwordValid);
 		} catch (UserRegistrationException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			//e.printStackTrace();
 		}
     	
     }
@@ -189,7 +190,7 @@ public class UserRegistrationTest
 			passwordValid = userReg.checkPassword(password);
 		} catch (UserRegistrationException e) {
 			System.out.println(e.getMessage());
-    		assertEquals(UserRegistrationException.ExceptionType.INVALID_PASSWORD, e.exceptionType);
+    		assertEquals(UserRegistrationException.ExceptionType.ENTERED_INVALID, e.exceptionType);
 		}
     }
     @Test
@@ -198,11 +199,12 @@ public class UserRegistrationTest
     	String password = "asdfRr3467h%";
     	boolean passwordValid;
 		try {
+			
 			passwordValid = userReg.checkPassword(password);
 			Assert.assertEquals(true, passwordValid);
 		} catch (UserRegistrationException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			//e.printStackTrace();
 		}
     	
     }
@@ -215,7 +217,7 @@ public class UserRegistrationTest
 			passwordValid = userReg.checkPassword(password);
 		} catch (UserRegistrationException e) {
 			System.out.println(e.getMessage());
-    		assertEquals(UserRegistrationException.ExceptionType.INVALID_PASSWORD, e.exceptionType);
+    		assertEquals(UserRegistrationException.ExceptionType.ENTERED_INVALID, e.exceptionType);
 		}
     	
     }
@@ -229,7 +231,7 @@ public class UserRegistrationTest
 			Assert.assertEquals(true, passwordValid);
 		} catch (UserRegistrationException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			//e.printStackTrace();
 		}
     	
     }
@@ -242,7 +244,7 @@ public class UserRegistrationTest
 			passwordValid = userReg.checkPassword(password);
 		} catch (UserRegistrationException e) {
 			System.out.println(e.getMessage());
-    		assertEquals(UserRegistrationException.ExceptionType.INVALID_PASSWORD, e.exceptionType);
+    		assertEquals(UserRegistrationException.ExceptionType.ENTERED_INVALID, e.exceptionType);
 		}
     	
     }
@@ -255,7 +257,7 @@ public class UserRegistrationTest
 			passwordValid = userReg.checkPassword(password);
 		} catch (UserRegistrationException e) {
 			System.out.println(e.getMessage());
-    		assertEquals(UserRegistrationException.ExceptionType.INVALID_PASSWORD, e.exceptionType);
+    		assertEquals(UserRegistrationException.ExceptionType.ENTERED_INVALID, e.exceptionType);
 		}
     	
     }
